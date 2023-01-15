@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+:root {
+  --textColor: rgb(255, 255, 255);
+  --background-color: rgb(103, 101, 101);
+  --weatherInfoBackground: rgb(37, 33, 33, 0.5);
+  --button: rgb(101, 88, 88);
+}
+
+body.light {
+  --textColor: rgb(2, 0, 0);
+  --background-color: rgb(227, 218, 218);
+  --weatherInfoBackground: rgb(37, 33, 33, 0.3);
+  --button: rgb(166, 141, 141);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  display: grid;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.mode {
+  //im not sure why I need to put this for absolute to work.
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(36, 90, 107);
+  padding: 4px;
+  border-radius: 50px;
+  gap: 15px;
+  cursor:pointer;
+  transition: all 200ms ease-in-out;
+  color:white;
+  .ball {
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 75%);
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    transition: transform 200ms ease-in-out;
+  }
+  &.clicked {
+    color: rgb(0, 0, 0);
+    background-color: rgb(230, 230, 230);
+  }
+  &.clicked .ball {
+    transform: translateX(43px);
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.weatherInfo {
+  display: grid;
+  gap: 5px;
+  background-color: var(--weatherInfoBackground);
+  padding: 30px;
+  border-radius: 20px;
+  color: var(--textColor);
+  .medium {
+    font-size: 30px;
+  }
+  .big {
+    font-size: 50px;
+  }
+  .bottom {
+    display: flex;
+    gap: 20px;
+  }
+  .left {
+    border-right: 5px solid black;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    .temp {
+      font-size: 40px;
+      font-weight: 900;
+      justify-self: end;
+    }
+    .unit {
+      padding-left: 5px;
+      justify-self: start;
+    }
+    .toggle {
+      grid-column: 1/-1;
+      background-color: var(--weatherInfoBackground);
+      padding: 5px 10px;
+      background: none;
+      border-radius: 15px;
+    }
+    .toggle:hover {
+      background-color: gray;
+    }
+  }
+  .right {
+    display: grid;
+    gap: 10px;
+  }
+}
+form {
+  display: grid;
+  gap: 10px;
+  grid-auto-rows: max-content;
+}
+input[type="search"] {
+  color: red;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  letter-spacing: 4px;
+  text-shadow: 0 0 2px black;
+  word-spacing: 20px;
+  font-size: 30px;
+}
+button {
+  font-size: 20px;
+  border: none;
+  color: var(--textColor);
+  cursor: pointer;
+  background: none;
+  padding: 10px 20px;
+  background-color: var(--button);
+  border-radius: 15px;
+  width: fit-content;
+}
