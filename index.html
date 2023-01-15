@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="mode">
+      <span class="material-symbols-outlined sun"> light_mode </span>
+      <span class="material-symbols-outlined dark"> dark_mode </span>
+      <div class="ball"></div>
+    </div>
+    <div class="container">
+      <div class="weatherInfo">
+        <div class="description medium">Description</div>
+        <div class="name big">Place</div>
+        <div class="date small">Date</div>
+        <div class="bottom">
+          <div class="left">
+            <div class="temp"></div>
+            <div class="unit">°C</div>
+            <button class="toggle">Toggle Temp</button>
+          </div>
+          <div class="right">
+            <div class="humidity card">Humidity:</div>
+            <div class="feels_like card">Feels like:</div>
+            <div class="wind_speed card">Wind speed:</div>
+          </div>
+        </div>
+      </div>
+      <form action="#">
+        <input type="search" name="search" id="search" required minlength="2" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
